@@ -1,0 +1,27 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <!-- <a href="{% url 'register' %}">Register</a> -->
+        <!-- <a href="{% url 'feed_back' %}">Feedback</a>
+        <a href="{% url 'contact' %}">Contact Us</a> -->
+    </nav>
+    <form action="{% url 'login_user' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <button type="submit">Login</button>
+        <a href="{% url 'register' %}" > Register!!</a>
+    </form>
+</body>
+</html>
